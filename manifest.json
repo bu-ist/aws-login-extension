@@ -1,7 +1,7 @@
 {
-  "name": "BU AWS SAML Login Tool",
+  "name": "AWS SAML Login Tool",
   "version": "1.0",
-	"manifest_version": 2,
+	"manifest_version": 3,
   "description": "Convert SAML authentication to API credentials",
 
   "icons": {
