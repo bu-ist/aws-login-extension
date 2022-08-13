@@ -28,7 +28,7 @@ jQuery(function( $ ) {
 							{ Version: '2011-06-15', Action: 'AssumeRoleWithSAML',
 								RoleArn: role, PrincipalArn: principal, 
 								SAMLAssertion: saml,
-								DurationSeconds: 60 * 60 * 8 // 12 hours
+								DurationSeconds: 60 * 60 * 8 // 8 hours
 							}, function ( data ) {
 								if ( $(data).find('ErrorResponse').length > 0 ) {
 									alert( 'Error!' );
