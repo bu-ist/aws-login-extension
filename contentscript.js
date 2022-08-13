@@ -27,7 +27,8 @@ jQuery(function( $ ) {
 			$.get( 'https://sts.amazonaws.com/',
 							{ Version: '2011-06-15', Action: 'AssumeRoleWithSAML',
 								RoleArn: role, PrincipalArn: principal, 
-								SAMLAssertion: saml
+								SAMLAssertion: saml,
+								DurationSeconds: 60 * 60 * 8 // 12 hours
 							}, function ( data ) {
 								if ( $(data).find('ErrorResponse').length > 0 ) {
 									alert( 'Error!' );
@@ -40,6 +41,7 @@ jQuery(function( $ ) {
 									var file = 'aws_access_key_id = ' + key + "\naws_secret_access_key = " + secret + "\naws_session_token = " + token + "\n";
 									copyToClipboard( file );
 									$(link).text( 'Copied' );
+									button.click();
 									$(link).closest('form').submit();
 								}
 							});
