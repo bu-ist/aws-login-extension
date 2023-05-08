@@ -24,7 +24,7 @@ jQuery(function( $ ) {
 
 			saml = encodeURI( saml );
 
-			$.get( 'https://sts.amazonaws.com/',
+			$.post( 'https://sts.amazonaws.com/',
 							{ Version: '2011-06-15', Action: 'AssumeRoleWithSAML',
 								RoleArn: role, PrincipalArn: principal, 
 								SAMLAssertion: saml,
